@@ -2,6 +2,8 @@
 This file is a codebook for tidy data in tidydata.txt
 ============================================================================
 
+This dataset contains  66 features with respect to activity and subject (total 68 columns) 
+
 1. activity :
       Length     Class      Mode 
         180   character   character
