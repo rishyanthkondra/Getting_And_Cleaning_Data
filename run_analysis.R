@@ -16,7 +16,7 @@ train_features <- read.table("Data/train/X_train.txt")
 names(train_features) <- features
 #Step 2 done here itself due to duplicate names in features 
 train_features <- select(train_features,grep("std\\(\\)|mean\\(\\)",features,value = T))
-train_subject <- readLines("Data/train/subject_train.txt")
+train_subject <- as.numeric(readLines("Data/train/subject_train.txt"))
 train_labels <- readLines("Data/train/y_train.txt")
 train_data <- mutate(train_features,activity = train_labels,subjects = train_subject)
 #getting rid of redundant data
@@ -27,7 +27,7 @@ test_features <- read.table("Data/test/X_test.txt")
 names(test_features) <- features
 #Step 2 done here itself due to duplicate names in features 
 test_features <- select(test_features,grep("std\\(\\)|mean\\(\\)",features,value = T))
-test_subject <- readLines("Data/test/subject_test.txt")
+test_subject <- as.numeric(readLines("Data/test/subject_test.txt"))
 test_labels <- readLines("Data/test/y_test.txt")
 test_data <- mutate(test_features,activity = test_labels,subjects = test_subject)
 #getting rid of redundant data
@@ -43,6 +43,8 @@ tidy_data <-
   mutate(activity = act_lab[as.numeric(activity)]) %>%
   #Step 5
   group_by(activity,subjects) %>%
-  summarise_all(mean) %>% ungroup() %>%
-  arrange(activity,subjects)
-write.table(tidy_data,"tidy_data.txt")
+  summarise_all(mean) 
+#removing unwanted data
+rm(data_set,act_lab,features)
+#wiriting to a file 
+write.table(tidy_data,file = "tidy_data.txt",row.names = F)
