@@ -47,4 +47,4 @@ tidy_data <-
 #removing unwanted data
 rm(data_set,act_lab,features)
 #wiriting to a file 
-write.table(tidy_data,file = "tidy_data.txt",row.names = F)
+write.table(tidy_data,file = "tidy_data.txt",row.names = F,quote = F)
