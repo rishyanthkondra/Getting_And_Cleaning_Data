@@ -32,23 +32,24 @@ These signals were used to estimate variables of the feature vector for each pat
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 *********** All these have a range of -1 to 1 as they are normalized **********************
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+All varibles starting with   -------------- Have the units
+tBodyAcc-XYZ                                accelration - length/s^2
+tGravityAcc-XYZ                             acceleration - length/s^2
+tBodyAccJerk-XYZ                            rate of change of acceleration - length/s^3
+tBodyGyro-XYZ                               angular velocity - rad/s
+tBodyGyroJerk-XYZ                           angular acceleration - angle/s^2 
+tBodyAccMag                                 accelration magnitude - length/s^2
+tGravityAccMag                              accelration magnitude - length/s^2
+tBodyAccJerkMag                             jerk magnitude - length/s^3
+tBodyGyroMag                                angular velocity - angle/s 
+tBodyGyroJerkMag                            angular acceleration - angle/s^2 
+fBodyAcc-XYZ                                acceleration - length/s^2
+fBodyAccJerk-XYZ                            jerk magnitude - length/s^3
+fBodyGyro-XYZ                               angular velocity - angle/s 
+fBodyAccMag                                 accleration - length/s^2
+fBodyAccJerkMag                             jerk magnitude - length/s^3     
+fBodyGyroMag                                angular velocity - angle/s 
+fBodyGyroJerkMag                            angular acceleration - angle/s^2 
 
 The set of variables that were estimated from these signals are: 
 
